@@ -12,7 +12,7 @@
 
 将Aria2.sh放在你喜欢的地方😆
 
-修改plist中sh的路径
+修改plist中shell的路径
 
 将local.Aria2.plist放在`~/Library/LaunchAgents/`下
 
