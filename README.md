@@ -4,7 +4,9 @@
 ### conf注意事项
 使用请将配置文件中三处文件路径修改为自己的路径
 
-将aria.conf放在`~/.aria2/`下
+将aria2.conf放在`~/.aria2/`下
+
+使用aria2命令时，aria2会自动加载`~/.aria2/aria2.conf`
 
 配置文件中没有启用input-file选项，理由在文件中有说明
 
@@ -26,7 +28,7 @@
 
     launchctl list | grep Aria2
 
-可以通过以下命令进入screen查看aria2的运行状态
+可以通过以下命令进入screen查看aria2的运行状态/日志
 
 	screen -r Aria2
 	
@@ -43,17 +45,19 @@
 	launchctl stop local.Aria2
 	launchctl start local.Aria2
 
-如果要删除开机启动 请把load改成unload
+----
 
-PS:shell中aria2使用了绝对路径，这是brew安装的aria2所在路径，之所以使用绝对路径是因为如果不这样做会有bug(似乎仅限于sh，bash应该就没事，要是没事干可以把shell的头改成bash)
+如果要删除开机启动 请把最开始的命令中的load改成unload
+
+PS:shell中aria2使用了绝对路径，这是brew安装的aria2所在路径，之所以使用绝对路径是因为如果不这样做会有bug(bug似乎仅限于sh，bash应该就没事)
 
 其他系统的话可以把screen和aria2命令写在同一行里添加到rc.local
 
 大概是这个样子
 
-	su - username -c 'screen -dmS Aria2 aria2c --enable-rpc=true --input-file=/Users/name/.aria2/aria2.session --conf-path=/Users/name/.aria2/aria2'
+	su - username -c 'screen -dmS Aria2 aria2c --enable-rpc=true --input-file=/Users/name/.aria2/aria2.session --conf-path=/Users/name/.aria2/aria2.conf'
 
-嵌套太多可能会失败，建议拆成shell后添加到rc.local
+嵌套太多可能会失败，所以建议拆成shell后添加到rc.local
 
 完
 
