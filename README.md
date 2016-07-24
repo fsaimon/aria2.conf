@@ -45,6 +45,13 @@
 	launchctl stop local.Aria2
 	launchctl start local.Aria2
 
+
+**注：**你可能会发现plist中 ProgramArgument 部分有一个奇怪的地方`&& w`
+
+没错他是多余的无用的，但没有他这个launchd项目就会启动失败
+
+我在stackoverflow上对问题作了详细的描述-->[链接](http://stackoverflow.com/questions/37990530/use-launch-daemon-spawn-a-screen-session-run-aria2-rpc)
+
 ----
 
 如果要删除开机启动 请把最开始的命令中的load改成unload
@@ -59,5 +66,5 @@ PS:shell中aria2使用了绝对路径，这是brew安装的aria2所在路径，�
 
 嵌套太多可能会失败，所以建议拆成shell后添加到rc.local
 
-完
+*完*
 
