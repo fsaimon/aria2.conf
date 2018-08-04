@@ -63,6 +63,9 @@ tmux -d -s Aria2 '/path/to/shell/Aria2.sh'
 
 然后链接里那个问题由于长期无人回答，被 stackoverflow 删除了。。。
 
+我在 archive.org 上找到了存档，感兴趣的话可以看这里：
+https://web.archive.org/web/20160902124010/https://stackoverflow.com/questions/37990530/use-launch-daemon-spawn-a-screen-session-run-aria2-rpc
+
 ----
 
 如果要删除开机启动 请把最开始的命令中的 load 改成 unload
